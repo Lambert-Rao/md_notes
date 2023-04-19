@@ -540,4 +540,4 @@ main:
 	.section	.note.GNU-stack,"",@progbits
 ```
 
-先不想写了，我去学学GDB调试，学CSAPP的时候再深入了解一下。
+先不想写了，我去学学rust，学CSAPP的时候再深入了解一下。
