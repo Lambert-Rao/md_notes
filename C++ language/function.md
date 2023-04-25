@@ -38,3 +38,26 @@ int main() {
 }
 ```
 在这段代码中，为了能在运行时调用参数，我们必须事前指定参数类型`Callback<int, int> callback_{};`不过`[捕获]`的数据可以随意使用。
+
+
+
+### `std::bind`
+
+```c++
+void func(int a) {
+  cout << a << endl;
+}
+int main() {
+  func(2);
+  auto f = bind(func, placeholders::_2);
+  f(1,5);
+  auto f2 = func;
+}
+```
+
+`bind`用于把参数绑定到现有函数的参数上，形成新的函数。
+
+```c++
+auto f = bind(func,&class)
+```
+

@@ -66,6 +66,8 @@ int main() {
 
 > std::condition_variable_any更加通用,这就可能产生额外的开销,所以std::condition_variable一般作为首选的类型
 
+
+
 ```c++
 #include <functional>
 #include <iostream>
@@ -128,6 +130,31 @@ int main ()
 消费者线程先上锁，然后`condition.wait()`，wait传入锁和条件谓词函数，判断失败会释放锁进入等待状态，判断成功则会重新获取锁，进入下面的操作，从消息队列中取出数据，注：取出之后再处理可以减小锁的粒度。
 
 等到下一次有`notify`的时候，`wait()`会被唤醒，重新做检查。
+
+> 几种函数
+
+<img src="https://raw.githubusercontent.com/Lambert-Rao/image_host/main/img/202304251049762.png" alt="image-20230425104956685" style="zoom:50%;" />
+
+**wait_for**
+
+```c++
+template <class Rep, class Period>
+cv_status wait_for (unique_lock<mutex>& lck,
+const chrono::duration<Rep,Period>& rel_time);
+template <class Rep, class Period, class Predicate>
+bool wait_for (unique_lock<mutex>& lck,
+const chrono::duration<Rep,Period>& rel_time, Predicate
+pred);
+```
+
+和wait不同的是,wait_for可以执行一个时间段,在线程收到唤醒通知或者时间超时之前,该线程都会
+处于阻塞状态,如果收到唤醒通知或者时间超时,wait_for返回,剩下操作和wait类似。
+
+与wait_for类似,只是**wait_until**可以指定一个时间点
+
+
+
+
 
 > TODO：线程安全队列？p100
 
@@ -201,12 +228,12 @@ auto future_time = async(launch::deferred,Tick::Wait);
 
 #### `std::package_task`
 
-通过`std::package_task`把各种callable obk包装起来，方便作为线程入口。
+通过`std::package_task`把各种callable obk包装起来，方便作为线程入口，`packaged_task`可以让任务的封装和执行分开。
 
 ```c++
 int main() {
   packaged_task task(Tick::Wait);
-  thread t1(std::ref(task));
+  thread t1(std::ref(task));//task一定要执行，否则result.get()会持续阻塞。
   future result = task.get_future();
   t1.join();
   cout << result.get() << endl;
@@ -232,5 +259,28 @@ int main() {
 }
 ```
 
+promise是一个承诺，当线程创建了promise时，它向线程承诺，这个值以后一定会被设置。
+
 ### 原子操作`<atomic>`
+
+```c++
+atomic<int> a = 0;
+//int a{} ;
+
+template<typename T>
+function<void(T &)> f(T &a) {
+  for (int i = 0; i < 1000000; i++) {
+    a++;
+  }
+}
+
+int main() {
+//  thread t1(f<int>, ref(a));
+//  thread t2(f<int>, ref(a));
+  thread t1(f<atomic<int>>, ref(a));
+  thread t2(f<atomic<int>>, ref(a));
+  t1.join(), t2.join();
+  cout << a << endl;
+}
+```
 
