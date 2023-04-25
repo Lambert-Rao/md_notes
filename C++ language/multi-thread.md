@@ -1,4 +1,19 @@
- 
+###  thread
+
+`thread.detach()`的话，句柄`t1` 已经无法管理这个线程了。当主线程结束，进程就结束了，线程没运行完。
+
+thread是可以`std::move(t0)`的，转移控制权。
+
+```c++
+//this_thread functions
+std::this_thread::get_id();
+//让出当前线程
+std::this_thread::yield();
+std::this_thread::sleep_until (chrono::system_clock::now()+chrono::seconds(3));
+std::this_thread::sleep_for(std::chrono::seconds(1));
+```
+
+
 
 ###  mutex
 
@@ -216,4 +231,6 @@ int main() {
   cout << f.get() << endl;
 }
 ```
+
+### 原子操作`<atomic>`
 
