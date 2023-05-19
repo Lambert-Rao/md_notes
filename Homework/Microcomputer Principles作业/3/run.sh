@@ -1,0 +1,1 @@
+ gcc -o factorial main.s && ./factorial

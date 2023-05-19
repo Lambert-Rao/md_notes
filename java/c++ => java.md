@@ -1,6 +1,6 @@
- 作为已经使用c++一年的资深程序员，面对java工程无法下手，于是决定简单学一下java，简单总结一下学习过程，重点在于从c++迁移到java。
-
 参照一下java核心技术(12ed)。
+
+https://www.cnblogs.com/zhuyp1015/p/3702681.html
 
 ## 安装环境
 
@@ -65,9 +65,21 @@ static int b = 3;
 enum Size {BIG,SMALL};
 ```
 
+#### 数组
+
+```java
+int a[] = new int [10];
+```
+
+数据会自动初始化（0,false,null），访问有范围检查
+
+复制数组是复制指针。
+
+java只有一维数组，自建多维数组存储空间不连续。
+
 #### 类型转换
 
-不允许损失精度的类型转换，强制转换
+不允许损失精度的类型转换，需要强制转换
 
 ```java
 double x = 3.3337;
@@ -117,6 +129,7 @@ String a = "Hello".substring(0, 3)+ "p!";
 不能用`==`比较字符串，它比的是指针
 
 ```java
+//这样
 s.equal(t);
 ```
 
@@ -155,4 +168,140 @@ System.out.println("Hello " + name + "!");
 Scanner sc = new Scanner(Path.*of*("src/input.txt"), StandardCharsets.*UTF_8*);
 
 ### 控制流程
+
+`switch`仍然需要`break`
+
+```java
+int a = switch (b) {
+            case 1 -> 1;
+            case 2 -> {
+                System.out.println("Hello");
+                yield 2;}
+            case 3 -> 3;
+            default -> 5;
+        };
+```
+
+我们可以在case中操作，但java没有rust那么智能，需要用`yield`来返回值。
+
+```java
+//另一种写法
+switch (2) {
+            case 1:
+                b = 1;
+            case 2: {
+                System.out.println("Hello");
+                b = 2;
+            }
+            case 3:
+                b = 3;
+            default:
+                b = 5;
+        };
+```
+
+如果要使用case x: 来判断，不加break就会一直执行下去。
+
+java提供了标签break语法，很方便地跳出嵌套循环。
+
+```java
+label1:
+        {
+            if (con) break label1;
+        }
+```
+
+大数 p77
+
+java中不能自定义运算符重载。for,while都有，for each也有
+
+```java
+for (int element:collection) {
+            System.out.println(i);
+        }
+```
+
+### 命令行参数
+
+```java
+public static void main(String[] args)
+```
+
+```bash
+java program -h
+```
+
+`args[0]=="-h"`，从实际参数开始
+
+## 类
+
+```java
+Class ptr = new Class();
+```
+
+```java
+class Person {
+    public String name;
+    private int age;
+}
+```
+
+可变参数, 相当于数组
+
+```java
+class Group {
+    private String[] names;
+
+    public void setNames(String... names) {
+        this.names = names;
+    }
+}
+```
+
+对象总是生成在堆上
+
+```java
+//继承
+class Foo extends Bar
+```
+
+成员函数默认是虚函数，可以用`final`停止继承. 
+
+```java
+class Foo extends Bar {
+    final void test();
+}
+```
+
+纯虚函数
+
+```java
+abstract class Bar { public abstract void foo(); }
+```
+
+
+
+### 接口
+
+比class更抽象的封装. 
+
+### 迭代器
+
+迭代器只是一个接口。 范围的开始是 <集合>.iterator，你必须用itr.hasNext()来查看是否到达集合尾。 使用itr.next()(是在C++中使用操作符++ 和*操作的结合)来获得下一个元素。 
+
+```java
+ArrayList myArrayList = new ArrayList();
+Iterator itr = myArrayList.iterator();
+while ( itr.hasNext() )
+{
+ System.out.println( itr.next() );
+}
+```
+
+```java
+ArrayList myArrayList = new ArrayList();
+        for (Object o : myArrayList) {
+            System.out.println(o);
+        }
+```
 

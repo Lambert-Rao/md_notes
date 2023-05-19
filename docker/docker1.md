@@ -30,10 +30,22 @@ docker run -p 81:80 nginx #端口映射，-P随机分配端口
 #健康检查
 docker run --rm --health-cmd "curl XXX" --health-interval 2s --health-retiries 5 
 docker run -d -it#有的镜像没有运行的进程，比如Ubuntu，使用it保持交互，不会退出
+docker run -dit --rm --name ubuntu ubuntu
 ```
 
 ```bash
-docker -f [options] #-f根据条件过滤
-docker rm `docker -f stauts=exit -q` #-q只显示编号
+docker ps -f [options] #-f根据条件过滤
+docker rm `docker ps -f status=exited -q` #-q只显示编号
+```
+
+```bash
+#进入容器操作
+docker exec cmd
+docker attach -it
+#查看容器状态
+docker inspect
+docker top
+#导出
+docker export -o name container
 ```
 

@@ -57,7 +57,7 @@ gcc -S bublesort.c
 
 > ELF（Executable and Linkable Format）:linux系统下的可执行文件和可链接文件，比如.o和.so，也就是说我平时用的指令就属于ELF
 
-为什么汇编要加. ？
+为什么汇编要加`.` ？
 
 > 点号（.）通常用于表示当前行的符号地址或者节（section）名称
 >
