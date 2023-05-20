@@ -20,6 +20,10 @@ sh run.sh
 
 当使用`syscall`时, 使用`%rax`传入系统调用号，使用`printf`时，把`%rax`置零表示没有浮点参数。
 
+bwlq
+
+![img](https://devinkin.github.io/ox-hugo/register.png)
+
 ## Code
 
 ```assembly
