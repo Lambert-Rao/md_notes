@@ -35,7 +35,7 @@ POCO ActiveRecord 的主要目标是减轻开发者编写大量关于数据库�
 
 属性名为 `id` 的属性被认为是主键，除非有另一个属性被指定为主键（在 `class` 元素中使用 `key` 属性）。也可以没有主键或 ID 列的对象（无键的活动记录）。
 
-生成的 C++ 类将在 `Sample` 命名空间中，如 <[project]> 元素所指定。
+生成的 C++ 类将在 `Sample` 命名空间中，如 <[project]> 元素所指定。p
 
 XML 文件中的定义对应于由以下 <[CREATE TABLE]> 语句构建的数据库模式：
 ```SQL
@@ -114,7 +114,7 @@ ActiveRecord使用一个上下文（Poco::ActiveRecord::Context）类将对象�
         << "description: " << pRole->description() << std::endl;
 ----
 
-!!更新对象
+## !!更新对象
 
 更新对象涉及首先使用设置器函数更新相应的属性，然后调用`update()`方法。要更新一个
 ActiveRecord对象，对象必须已经绑定到一个上下文。
@@ -240,7 +240,7 @@ lambda表达式接收一个ActiveRecord对象的const引用，必须返回一个
     pEmployee->create(pContext);
 ----
 
-!自增键和插入时自动生成的UUID
+### !自增键和插入时自动生成的UUID
 
 ActiveRecord支持在插入ActiveRecord时自增键。要启用此功能，需要将`class`元素的`autoIncrementID`属性设置为`true`。插入这样的ActiveRecord对象时，执行`INSERT`语句后，键的实际值将从数据库中获取。当前，这是针对SQLite、MySQL/MariaDB和PostgreSQL实现的，使用适当的数据库特定机制。
 
