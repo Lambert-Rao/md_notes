@@ -70,4 +70,4 @@ end_factorial:
 
 ## Link
 
-https://github.com/Lambert-Rao/md_notes/tree/main/Homework/Microcomputer%20Principles%E4%BD%9C%E4%B8%9A/3
+https://github.com/Limpol-Rao/md_notes/tree/main/Homework/Microcomputer%20Principles%E4%BD%9C%E4%B8%9A/3

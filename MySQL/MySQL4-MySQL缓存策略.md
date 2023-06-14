@@ -34,13 +34,13 @@
 
 写操作只在主数据库
 
-![image-20230317155814013](https://raw.githubusercontent.com/Lambert-Rao/image_host/main/img/202303171559434.png)
+![image-20230317155814013](https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202303171559434.png)
 
 从数据库解决读压力
 
 #### 原理
 
-![image-20230317160108717](https://raw.githubusercontent.com/Lambert-Rao/image_host/main/img/202303171601829.png)
+![image-20230317160108717](https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202303171601829.png)
 
 write:增删改修改数据后，会把数据变更写入二进制日志，binary log和redo log 一起写的，binary log 用来做主从复制和数据备份
 

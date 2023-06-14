@@ -49,7 +49,7 @@ redolog，记录DML对物理页修改的内容
 
 binlog 用于主从备份
 
-![image-20230311215203674](https://raw.githubusercontent.com/Lambert-Rao/image_host/main/img/202303112152776.png)
+![image-20230311215203674](https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202303112152776.png)
 
 commit之后，一个transaction结束。
 

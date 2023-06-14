@@ -1,6 +1,6 @@
 ## 浮点数编码
 
-今日闲来无事，写一下陈老师作业，哎呀，不知道陈老师留了些甚么作业，不妨看看群里怎么说，<img src="https://raw.githubusercontent.com/Lambert-Rao/image_host/main/img/202303031548213.png" alt="image-20230303154839185" style="zoom: 50%;" />，好，我们就按这位同学说的，写一下作业。
+今日闲来无事，写一下陈老师作业，哎呀，不知道陈老师留了些甚么作业，不妨看看群里怎么说，<img src="https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202303031548213.png" alt="image-20230303154839185" style="zoom: 50%;" />，好，我们就按这位同学说的，写一下作业。
 
 什么叫带小数点，就是浮点数呗，转二进制？我懂了，我已经理解了一切，这是在问我浮点数的编码啊，
 

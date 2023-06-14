@@ -34,17 +34,17 @@
 
 联合分析，重在分析
 
-![image-20230309131827672](https://raw.githubusercontent.com/Lambert-Rao/image_host/main/img/202303091318784.png)
+![image-20230309131827672](https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202303091318784.png)
 
 Redis是单reactor模型，而mysql使用io多路复用`select`+阻塞io ,所以mysql具有跨平台性质
 
-![线程分配](https://raw.githubusercontent.com/Lambert-Rao/image_host/main/img/202303091054767.png)
+![线程分配](https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202303091054767.png)
 
 mysql每次连接分配一个线程，每次阻塞在一条线程上，所以mysql是多线程并发处理命令的
 
 mysql是短链接，会主动断开连接
 
-![SQL层次](https://raw.githubusercontent.com/Lambert-Rao/image_host/main/img/202303101340211.png)
+![SQL层次](https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202303101340211.png)
 
 ### server层
 
@@ -116,7 +116,7 @@ ex：用户表里面存在冗余，避免联表查询降低速度
 
 ### 执行过程
 
-![image-20230311215203674](https://raw.githubusercontent.com/Lambert-Rao/image_host/main/img/202303112152776.png)
+![image-20230311215203674](https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202303112152776.png)
 
 ### SQL
 

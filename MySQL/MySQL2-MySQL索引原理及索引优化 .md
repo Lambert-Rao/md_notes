@@ -70,7 +70,7 @@ INDEX `index_name` (`c1`,`c2`)-- 联合索引
 
 #### InnoDB中必须要有主键
 
-<img src="https://raw.githubusercontent.com/Lambert-Rao/image_host/main/img/202303101940530.png" alt="image-20230310194003400" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202303101940530.png" alt="image-20230310194003400" style="zoom:50%;" />
 
 具有`NOT NULL`和`UNIQUE`两个属性的列，会被选择为主键
 
@@ -84,7 +84,7 @@ InnoDB 引擎中的索引是基于 B-tree 实现的，每个索引键必须唯�
 
 叶子结点之间相互连接，形成双向链表，节点默认大小是固定的16kb（4数据页）
 
-![聚集索引](https://raw.githubusercontent.com/Lambert-Rao/image_host/main/img/202303110800945.jpeg)
+![聚集索引](https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202303110800945.jpeg)
 
 //*查找ID在18-40内容过程*
 
@@ -92,7 +92,7 @@ InnoDB 引擎中的索引是基于 B-tree 实现的，每个索引键必须唯�
 
 非叶子结点只存储索引信息，叶子结点记录数据信息
 
-![辅助索引](https://raw.githubusercontent.com/Lambert-Rao/image_host/main/img/202303110827604.jpeg)
+![辅助索引](https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202303110827604.jpeg)
 
 ```SQL
 SELECT * FROM `user` WHERE `lockyNum = 33 ;
@@ -189,7 +189,7 @@ graph LR
 
 16kb，buffer pool缓存数据页，用来降低磁盘IO次数
 
-![img](https://raw.githubusercontent.com/Lambert-Rao/image_host/main/img/202303112207175.png)
+![img](https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202303112207175.png)
 
 ### Buffer Pool
 
@@ -209,7 +209,7 @@ DML修改时，在Buffer Pool修改的数据信息会储存在flush list中
 
 ==LRU list==-新数据进来时放在$$\frac{5}{8}$$位置，每次查询后热数据前移，冷数据后移，不断淘汰冷数据。
 
-![LRU](https://raw.githubusercontent.com/Lambert-Rao/image_host/main/img/202303112208451.png)
+![LRU](https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202303112208451.png)
 
 ### Change Buffer
 
