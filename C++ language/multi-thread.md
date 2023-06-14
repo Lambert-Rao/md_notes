@@ -133,7 +133,7 @@ int main ()
 
 > 几种函数
 
-<img src="https://raw.githubusercontent.com/Lambert-Rao/image_host/main/img/202304251049762.png" alt="image-20230425104956685" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202304251049762.png" alt="image-20230425104956685" style="zoom:50%;" />
 
 **wait_for**
 
