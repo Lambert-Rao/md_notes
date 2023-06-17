@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50"
+   height="50"
+   viewBox="0 0 13.229166 13.229167"
+   version="1.1"
+   id="svg5"
+   xml:space="preserve"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="mo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="16"
+     inkscape:cx="25.21875"
+     inkscape:cy="22.5"
+     inkscape:window-width="2560"
+     inkscape:window-height="1335"
+     inkscape:window-x="2560"
+     inkscape:window-y="80"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" /><defs
+     id="defs2" /><g
+     inkscape:label="图层 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline;fill:none;fill-opacity:1"
+     transform="matrix(0.09808976,0,0,0.09808976,3.8611452,4.3469308)"><path
+       style="fill:#575757;fill-opacity:1;stroke:#575757;stroke-width:0.72566928;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5;stroke-opacity:1;paint-order:markers fill stroke;stroke-dasharray:none"
+       d="M 1.8597273,40.849008 V 33.586629 L 6.134685,29.347637 c 2.3512267,-2.331445 4.274958,-4.263924 4.274958,-4.294397 0,-0.03047 -1.9182971,-1.97918 -4.2628819,-4.330463 L 1.8838796,16.447718 1.8974553,9.1899513 1.9110309,1.9321842 h 7.2626118 7.2626113 l 4.282903,4.2579192 4.282903,4.2579196 4.286205,-4.2820719 4.286206,-4.2820715 h 7.03227 c 3.867748,0 7.133119,0.013823 7.256382,0.030718 l 0.224112,0.030718 v 7.2511001 7.2511003 l -4.274958,4.27516 -4.274958,4.275161 4.274958,4.274754 4.274958,4.274753 v 7.280775 7.280774 l -7.281919,-0.02828 -7.281919,-0.02828 -4.262882,-4.257406 -4.262882,-4.257406 -4.287135,4.286932 -4.287134,4.286932 H 9.1415452 1.8597273 Z"
+       id="path2503"
+       transform="matrix(2.6973594,0,0,2.6973594,-39.363387,-44.315847)" /></g><g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="图层 2"
+     style="display:inline"
+     transform="matrix(0.12340335,0,0,0.12340335,5.041422,5.6432344)"><path
+       id="path1517-3"
+       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.1583;stroke-linejoin:miter;stroke-miterlimit:4.3;stroke-dasharray:none;stroke-opacity:1"
+       d="M -1.0660414,-5.9351158 21.143698,31.093317 58.119992,53.228458 35.951021,16.245737 Z M -1.1436487,21.725869 35.88479,-0.48386348 58.019932,-37.460159 21.037196,-15.291196 Z M -32.596075,53.148882 4.4323633,30.939155 26.567514,-6.0371398 -10.415232,16.131822 Z m -0.02767,-90.644825 22.209736,37.02843442 L 26.562289,21.667637 4.3933223,-15.315097 Z" /></g></svg>
