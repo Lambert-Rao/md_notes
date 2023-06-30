@@ -1,3 +1,0 @@
-/home/lambert/code/Minist/build/CMakeFiles/minist.dir
-/home/lambert/code/Minist/build/CMakeFiles/edit_cache.dir
-/home/lambert/code/Minist/build/CMakeFiles/rebuild_cache.dir
