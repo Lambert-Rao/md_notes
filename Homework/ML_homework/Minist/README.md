@@ -55,12 +55,12 @@ $$
 
 5. **权重更新**：根据计算出的误差梯度，进行权重的更新。权重的更新遵循梯度下降法则，即向误差减小的方向调整权重。新的权重是通过旧的权重减去学习率乘以误差梯度得到的：
 $$
-w_{new} = w_{old} - \text{learning\_rate} \cdot \delta \cdot
+w_{new} = w_{old} - \text{learning\_rate} \cdot \delta
 $$
 
 以上步骤会在每个训练样本上重复执行，直到网络的预测误差满足预设的阈值，或者达到预设的迭代次数为止。在每个训练周期内，前向传播和反向传播过程都会执行一次。
 
-### 实验过程
+###  实验过程
 在本次实验中，设计并实现了一个具有单一隐藏层的神经网络。该网络包括一个输入层，一个隐藏层和一个输出层。输入层包含了784个节点，每个节点对应一个28x28像素的图像中的一个像素。这样的设计可以有效地处理图像数据，并充分利用输入信息。隐藏层含有30个节点，足够大的规模使其具有较高的模型复杂度，可以捕获许多复杂的特征和模式。输出层有10个节点，代表了10个分类结果，即0至9的数字。选用了Sigmoid函数作为神经元的激活函数，其典型的S形曲线可以有效地平滑输入值，使得小的改变在输出端产生大的效果，有助于神经网络的学习和优化。
 
 为了最大限度地提高模型的性能，采用了两种优化策略：多线程训练和动态学习率调整。首先，进行了基于单线程的直接训练作为基准，然后，为了提高训练效率，引入了多线程训练方法，这种方法将数据集分成多个部分并同时进行训练，可以显著地减少训练时间，使得神经网络可以更快地收敛。最后，采用了动态学习率调整策略，这种策略将学习率在训练过程中逐渐减小，这样做可以提高模型的准确性并避免过拟合。逐渐减小的学习率也能帮助模型在训练早期快速接近最优解，然后在训练后期更精细地进行调整。
@@ -72,66 +72,13 @@ $$
 #### **训练结果**
 
 ```
-epoch = 1, average precision = 0.925898, average recall = 0.925072, average F1 score = 0.924915, time:2
-epoch = 2, average precision = 0.942435, average recall = 0.941882, average F1 score = 0.941962, time:4
-epoch = 3, average precision = 0.947779, average recall = 0.947478, average F1 score = 0.9475, time:6
-epoch = 4, average precision = 0.951769, average recall = 0.951319, average F1 score = 0.951395, time:8
-epoch = 5, average precision = 0.954758, average recall = 0.954568, average F1 score = 0.954586, time:10
-epoch = 6, average precision = 0.956329, average recall = 0.95574, average F1 score = 0.955916, time:12
-epoch = 7, average precision = 0.957609, average recall = 0.957028, average F1 score = 0.957187, time:14
-epoch = 8, average precision = 0.958121, average recall = 0.957684, average F1 score = 0.957809, time:16
-epoch = 9, average precision = 0.9588, average recall = 0.958201, average F1 score = 0.958382, time:17
+epoch = 1,  average precision = 0.925898, average recall = 0.925072, average F1 score = 0.924915, time:2
 epoch = 10, average precision = 0.959579, average recall = 0.959338, average F1 score = 0.959403, time:19
-epoch = 11, average precision = 0.959222, average recall = 0.959022, average F1 score = 0.959062, time:21
-epoch = 12, average precision = 0.960428, average recall = 0.959994, average F1 score = 0.96012, time:23
-epoch = 13, average precision = 0.960503, average recall = 0.9601, average F1 score = 0.960221, time:25
-epoch = 14, average precision = 0.960581, average recall = 0.960092, average F1 score = 0.96023, time:27
-epoch = 15, average precision = 0.960983, average recall = 0.960733, average F1 score = 0.960801, time:29
-epoch = 16, average precision = 0.961733, average recall = 0.961436, average F1 score = 0.961528, time:31
-epoch = 17, average precision = 0.962015, average recall = 0.961745, average F1 score = 0.96183, time:33
-epoch = 18, average precision = 0.961369, average recall = 0.961159, average F1 score = 0.961213, time:35
-epoch = 19, average precision = 0.961414, average recall = 0.961151, average F1 score = 0.961228, time:36
-epoch = 20, average precision = 0.961497, average recall = 0.961233, average F1 score = 0.96132, time:38
-epoch = 21, average precision = 0.961898, average recall = 0.961617, average F1 score = 0.961712, time:40
-epoch = 22, average precision = 0.9615, average recall = 0.961252, average F1 score = 0.961325, time:42
-epoch = 23, average precision = 0.961669, average recall = 0.961456, average F1 score = 0.961516, time:44
-epoch = 24, average precision = 0.961891, average recall = 0.961641, average F1 score = 0.961717, time:46
-epoch = 25, average precision = 0.962205, average recall = 0.961953, average F1 score = 0.962032, time:48
-epoch = 26, average precision = 0.962512, average recall = 0.962249, average F1 score = 0.962334, time:50
-epoch = 27, average precision = 0.962711, average recall = 0.962451, average F1 score = 0.962536, time:52
-epoch = 28, average precision = 0.962282, average recall = 0.962046, average F1 score = 0.962122, time:53
-epoch = 29, average precision = 0.962366, average recall = 0.96216, average F1 score = 0.96222, time:55
+epoch = 20, average precision = 0.961497, average recall = 0.961233, average F1 score = 0.96132 , time:38
 epoch = 30, average precision = 0.962786, average recall = 0.962541, average F1 score = 0.962621, time:57
-epoch = 31, average precision = 0.962668, average recall = 0.962453, average F1 score = 0.962518, time:59
-epoch = 32, average precision = 0.962766, average recall = 0.962547, average F1 score = 0.962611, time:61
-epoch = 33, average precision = 0.962875, average recall = 0.962644, average F1 score = 0.962715, time:63
-epoch = 34, average precision = 0.962975, average recall = 0.962753, average F1 score = 0.962819, time:65
-epoch = 35, average precision = 0.963077, average recall = 0.96285, average F1 score = 0.962918, time:67
-epoch = 36, average precision = 0.963563, average recall = 0.963383, average F1 score = 0.963429, time:69
-epoch = 37, average precision = 0.963462, average recall = 0.963271, average F1 score = 0.963321, time:71
-epoch = 38, average precision = 0.963563, average recall = 0.963383, average F1 score = 0.963429, time:73
-epoch = 39, average precision = 0.963547, average recall = 0.963383, average F1 score = 0.963423, time:74
 epoch = 40, average precision = 0.963542, average recall = 0.963396, average F1 score = 0.963427, time:76
-epoch = 41, average precision = 0.963542, average recall = 0.963396, average F1 score = 0.963427, time:78
-epoch = 42, average precision = 0.963222, average recall = 0.963101, average F1 score = 0.963119, time:80
-epoch = 43, average precision = 0.963323, average recall = 0.9632, average F1 score = 0.963219, time:82
-epoch = 44, average precision = 0.963313, average recall = 0.963207, average F1 score = 0.963219, time:84
-epoch = 45, average precision = 0.963414, average recall = 0.963304, average F1 score = 0.963319, time:86
-epoch = 46, average precision = 0.963314, average recall = 0.963202, average F1 score = 0.963218, time:88
-epoch = 47, average precision = 0.963314, average recall = 0.963202, average F1 score = 0.963218, time:90
-epoch = 48, average precision = 0.963211, average recall = 0.9631, average F1 score = 0.963115, time:92
-epoch = 49, average precision = 0.963211, average recall = 0.9631, average F1 score = 0.963115, time:94
-epoch = 50, average precision = 0.963211, average recall = 0.9631, average F1 score = 0.963115, time:96
-epoch = 51, average precision = 0.963312, average recall = 0.963212, average F1 score = 0.963223, time:98
-epoch = 52, average precision = 0.963312, average recall = 0.963212, average F1 score = 0.963223, time:100
-epoch = 53, average precision = 0.963312, average recall = 0.963212, average F1 score = 0.963223, time:102
-epoch = 54, average precision = 0.963312, average recall = 0.963212, average F1 score = 0.963223, time:104
-epoch = 55, average precision = 0.963312, average recall = 0.963212, average F1 score = 0.963223, time:106
-epoch = 56, average precision = 0.963312, average recall = 0.963212, average F1 score = 0.963223, time:108
-epoch = 57, average precision = 0.963025, average recall = 0.9629, average F1 score = 0.962922, time:110
-epoch = 58, average precision = 0.963025, average recall = 0.9629, average F1 score = 0.962922, time:112
-epoch = 59, average precision = 0.963025, average recall = 0.9629, average F1 score = 0.962922, time:113
-epoch = 60, average precision = 0.963025, average recall = 0.9629, average F1 score = 0.962922, time:116
+epoch = 50, average precision = 0.963211, average recall = 0.9631  , average F1 score = 0.963115, time:96
+epoch = 60, average precision = 0.963025, average recall = 0.9629  , average F1 score = 0.962922, time:116
 ```
 
 #### **实验结果综述与分析**
@@ -164,7 +111,7 @@ epoch = 60, average precision = 0.963025, average recall = 0.9629, average F1 sc
 
 [Principles of training multi-layer neural network using backpropagation](https://wiki.eecs.yorku.ca/course_archive/2011-12/F/4403/_media/backpropagation.pdf)
 
-[BP实现示例](https://mp.weixin.qq.com/s?__biz=MzU2MDAyNzk5MA==&mid=2247483953&idx=1&sn=6f09647ba35beaff6ac4965d78f645c7&chksm=fc0f0208cb788b1ee1fa0b62f386b23d3de58edd79c61f481fb6ccf04c2fcea4025cce6bc87e#rd)
+[BP实现示例]()
 
 周志华《机器学习》
 
