@@ -10,7 +10,7 @@
 
 `HTTP2`也支持乱序请求
 
-![image-20230720155901282](https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202307201559371.png)
+##### ![image-20230720155901282](https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202307201559371.png)
 
 ### 使用
 
@@ -71,3 +71,6 @@ uint32 result_code = 2;
 
 ### 同步
 
+```protobuf
+rpc RouteChat(stream RouteNote) returns (stream RouteNote) {}
+```
