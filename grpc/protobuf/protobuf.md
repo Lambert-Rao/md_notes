@@ -75,6 +75,8 @@ lite模式只能把每个字段的`value`取出，但是无法得知编号对应
 
 [具体看文档](https://github.com/Limpol-Rao/2207_docs/blob/main/3.3.3%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1ProtoBuf/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1ProtoBuf-20221011v1.1.pdf)
 
+![img](https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202309111413521.webp)
+
 每个byte, 用7个储存数据，1个表示是否结束。1 没结束 0 结束。
 
 `proto`中有三种数字编码：

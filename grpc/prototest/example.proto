@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package example;
+message person{
+  string name = 1;
+  sint32 id = 2;
+  reserved 3;
+  enum phone_type{
+    MOBILE = 0;
+    HOME = 1;
+    WORK = 2;
+  }
+}
+
+message book{
+  string title = 1;
+  string author = 2;
+  string publisher = 3;
+  repeated person person = 4;
+  reserved 5;
+}
+
+    
