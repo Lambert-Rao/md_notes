@@ -1,0 +1,3 @@
+Dao是数据的控制层，负责数据操纵
+Service代表最小业务事务单元。
+controller提供服务
