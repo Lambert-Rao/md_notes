@@ -1,4 +1,7 @@
- 
+---
+title: "Arch linux"
+layout: post
+--- 
 
 首先按照官方教程安装
 

@@ -155,6 +155,4 @@ end
 
 <iframe src="//player.bilibili.com/player.html?aid=31289365&bvid=BV1iW411d7hd&cid=54672422&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
-![106009600_p0_master1200](https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202303110906138.jpg)
 
-![image-20230311090743473](https://raw.githubusercontent.com/Limpol-Rao/image_host/main/img/202303110908535.png)
