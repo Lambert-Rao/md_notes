@@ -1,3 +1,8 @@
+--
+title: oauth2
+type: page
+--
+
 1. web向服务器请求第三方登录登录, 服务器返回github第三方登录`uri`
 > `uri`包含`response_type`(认证方式,比如code), `client_id`, `redirect_uri`, `scope`表示授权范围
 2. 用户点击`uri`, 进入github, github询问用户是否同意授权指定范围的登录请求

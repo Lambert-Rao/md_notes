@@ -1,0 +1,17 @@
+name: Merge main to vercel
+on:
+  push:
+    branches:
+      - 'main'
+jobs:
+  merge-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+
+      - name: Merge main -> vercel
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          target_branch: vercel
+          github_token: ${{ secrets.ACTION_TOKEN }}
