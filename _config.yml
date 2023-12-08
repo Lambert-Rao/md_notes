@@ -1,0 +1,38 @@
+title: Lambert's notes here
+author:
+  name: Lambert-Rao
+  email: lambertrao@outlook.com
+description: > # this means to ignore newlines until "show_excerpts:"
+  LambertRao's notes written learning software engineering and computer science.
+show_excerpts: true # set to true to show excerpts on the homepage
+heading: just notes
+subheading: >
+  note note.
+# Nord-theme date format
+# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
+jekyll-nord-theme:
+  date_format: "%b %d, %Y"
+
+  # generate social links in footer
+  social_links:
+    telegram: lambertrao
+    github:  lambert-rao
+    
+
+# If you want to link only specific pages in your header, uncomment
+# this and add the path to the pages in order as they should show up
+#header_pages:
+# - about.md
+
+# Build settings
+theme: jekyll-nord-theme
+
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "page"
