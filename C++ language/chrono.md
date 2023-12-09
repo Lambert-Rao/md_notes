@@ -1,5 +1,6 @@
 ---
-title: chrono
+title: "c++ chrono"
+type: page
 ---
  
 
