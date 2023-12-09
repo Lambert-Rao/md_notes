@@ -1,8 +1,8 @@
 ---
 title: "c++ chrono"
+type: page
 ---
-
-
+ 
 
 https://zhuanlan.zhihu.com/p/623543334
 
