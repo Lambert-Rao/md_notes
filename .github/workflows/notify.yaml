@@ -1,0 +1,49 @@
+name: 7days notify
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 4 * * *'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Get last commit
+        id: last_commit
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const commits = await github.rest.repos.listCommits({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+            return commits.data[0].commit.author.date;
+
+      - name: Check if commit is older than 7 days
+        id: check_date
+        run: |
+          echo "Last commit was at ${{ steps.last_commit.outputs.result }}"
+          echo "Current date is $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          if [[ $(($(date -u +%s) - $(date -u -d "${{ steps.last_commit.outputs.result }}" +%s))) -gt 604800 ]]; then
+            echo "::set-output name=send_email::true"
+          else
+            echo "::set-output name=send_email::false"
+          fi
+        shell: bash
+
+      - name: Send mail
+        if: steps.check_date.outputs.send_email == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          connection_url: smtp://${{ secrets.MAIL_USERNAME }}:${{ secrets.MAIL_PASSWORD }}@${{ secrets.MAIL_ADDRESS }}  # 例如: smtps://username:password@smtp.office365.com:587
+          secure: true
+          subject: Github Action(md_notes) - 7 days no commit
+          to: lambertrao@outlook.com
+          from: github action   
+          body: Hey, Lambert! The repository [md_notes] has not been updated for 7 days. The last commit was at ${{ steps.last_commit.outputs.result }}.
+          ignore_cert: true  # 是否忽略无效的证书
+          priority: low  # 邮件优先级，可以是 'high', 'normal' 或 'low'
