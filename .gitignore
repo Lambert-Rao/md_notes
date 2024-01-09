@@ -1,6 +1,11 @@
 .idea
 .directory
 
+
+_site
+.jekyll-cache
+assets
+
 *.gem
 .bundle
 .jekyll-cache
