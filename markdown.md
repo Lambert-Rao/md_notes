@@ -141,18 +141,8 @@ flowchart LR
 4-->1
 ```
 
-```mermaid
-flowchart TB
-0(B)
-1((C))
-2{{D}}
-3[[E]]
-4[(F)]
-subgraph sub
-0 ----> 1 & 2 o--o 3 %%注释
-end
-```
+
 
 <iframe src="//player.bilibili.com/player.html?aid=31289365&bvid=BV1iW411d7hd&cid=54672422&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
-
+![core fighter](https://static.wikia.nocookie.net/gundam/images/2/26/Corefighter.jpg/revision/latest?cb=20120630063922)
