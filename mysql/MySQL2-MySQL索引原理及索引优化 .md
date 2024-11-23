@@ -76,7 +76,7 @@ INDEX `index_name` (`c1`,`c2`)-- 联合索引
 
 为什么？
 
-InnoDB 引擎中的索引是基于 B-tree 实现的，每个索引键必须唯一。
+InnoDB 引擎中的索引是基于 B+tree 实现的，每个索引键必须唯一。
 
 #### InnoDB中B+的特征？
 
